@@ -32,7 +32,7 @@ El archivo TXT que se suba debe cumplir con las siguientes condiciones:
 
 ---
 
-## 🔧 Prerrequisitos
+## Prerrequisitos
 
 Antes de comenzar, asegúrate de tener instalado:
 
@@ -80,23 +80,6 @@ python manage.py runserver
 
 Luego abre tu navegador y accede a:  
 `http://127.0.0.1:8000`
-
----
-
-##  Ejemplos de Uso
-
-- **Página inicial**
-
-![Inicio](Actividad1/im1.png)
-
-
-- **Archivo válido (con errores encontrados)**
-
-![Validación 2](Actividad1/im2.png)
-
-- **Archivo válido corregido (sin errores)**
-
-![Validación 3](Actividad1/im3.png)
 
 ---
 
