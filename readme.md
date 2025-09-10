@@ -2,7 +2,7 @@ Instrucciones de ejecucion e instalacion:
 
 1. Se crea el proyecto o carpeta de nombre "mi_proyecto".
 2. Instalar librerias o dependencias las cuales se encuentran en el archivo requirements.txt
-3. Ejecutar los comanos de django-admin startproject "nombre del proyecto"
+3. Ejecutar los comandos de django-admin startproject "nombre del proyecto" (Esto es requerido solo si se va a crear una app django desde cero, si no omitir este paso)
 4. Ejecutar el run o build del proyecto con el comando 
    python manage.py runserver 
 
