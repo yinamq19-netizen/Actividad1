@@ -77,9 +77,10 @@ cd Actividad1
 ```bash
 python manage.py runserver
 ```
-
+---
 Luego abre tu navegador y accede a:  
 `http://127.0.0.1:8000`
+
 ---
 
 ## Importante
