@@ -70,7 +70,7 @@ pip install -r requirements.txt
 
 ### 4️. Ingresar a la carpeta del proyecto
 ```bash
-cd validate_file
+cd Actividad1
 ```
 
 ### 5️. Ejecutar el Servidor de Desarrollo
@@ -80,7 +80,6 @@ python manage.py runserver
 
 Luego abre tu navegador y accede a:  
 `http://127.0.0.1:8000`
-
 ---
 
 ## Importante
