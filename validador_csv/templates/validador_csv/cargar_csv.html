@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Subir archivo CSV</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Subir</button>
+  </form>
+  {% if errores %}
+    <div style="color: red;">
+      <h3>Errores de validación:</h3>
+      <ul>
+        {% for error in errores %}
+          <li>Fila {{ error.fila }}, Columna {{ error.columna }}: {{ error.mensaje }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  {% if exito %}
+    <div style="color: green;">
+      <h3>Archivo validado correctamente.</h3>
+    </div>
+  {% endif %}
+{% endblock %}

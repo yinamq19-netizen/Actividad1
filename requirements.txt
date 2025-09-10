@@ -1,0 +1,4 @@
+pdf2python>=0.9.0
+django
+pip
+sql
