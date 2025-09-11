@@ -41,6 +41,33 @@ Antes de comenzar, asegúrate de tener instalado:
 - **Virtualenv** (opcional, recomendado para aislar dependencias)  
 
 ---
+## Estructura de Proyecto
+
+[Actividad1]
+    ├── asgi.py
+    ├── settings.py
+    ├── urls.py
+    ├── wsgi.py
+    ├── __init__.py
+manage.py
+readme.md
+requirements.txt
+[validador_csv]
+    ├── apps.py
+    ├── forms.py
+    ├── [migrations]
+        ├── __init__.py
+        └── [__pycache__]
+            └── __init__.cpython-313.pyc
+    ├── [templates]
+        ├── base.html
+        ├── invalido.txt
+        ├── [validador_csv]
+            └── cargar_csv.html
+        └── valido.txt
+    ├── urls.py
+    ├── views.py
+---
 
 ##  Instalación y Ejecución
 
