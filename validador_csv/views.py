@@ -1,15 +1,23 @@
-
 import csv
 import io
+import os
 import re
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CSVUploadForm
-from django.contrib import messages
 
 def validar_csv(f):
 	errores = []
-	contenido = f.read().decode('utf-8')
-	reader = csv.reader(io.StringIO(contenido))
+	extension = os.path.splitext(f.name)[1].lower()
+	try:
+		contenido = f.read().decode('utf-8')
+		if extension != '.txt':
+			errores.append({'mensaje': 'El tipo de archivo tiene que ser .txt'})
+			return errores
+	except UnicodeDecodeError:
+		errores.append({'mensaje': 'El tipo de archivo tiene que ser .txt'})
+		return errores
+	
+	reader = csv.reader(io.StringIO(contenido, newline=''))
 	filas = list(reader)
 	for i, fila in enumerate(filas, start=1):
 		if len(fila) != 5:
@@ -44,6 +52,17 @@ def cargar_csv(request):
 			errores = validar_csv(archivo)
 			if not errores:
 				exito = True
+				request.session['exito'] = True
+				request.session['errores'] = []
+				return redirect('cargar_csv')
+			else:
+				request.session['exito'] = False
+				request.session['errores'] = errores
+				return redirect('cargar_csv')
 	else:
 		form = CSVUploadForm()
+
+		exito = request.session.pop('exito', False)
+		errores = request.session.pop('errores', [])
 	return render(request, 'validador_csv/cargar_csv.html', {'form': form, 'errores': errores, 'exito': exito})
+
